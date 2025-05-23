@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 
     #my apps
     'apps.home',
-    'apps.users'
+    'apps.users',
+    'apps.messenger'
 ]
 
 SITE_ID = 1
@@ -156,7 +157,10 @@ LOGIN_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHODS = ['username','email']
-ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('apps.home.urls')),
     path('home/', include('apps.home.urls')),
     path('user/', include('apps.users.urls')),
+    path('messenger/', include('apps.messenger.urls'))
 
 ]
 
