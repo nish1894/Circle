@@ -32,22 +32,45 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 # Application definition
 
 INSTALLED_APPS = [
+    # Core apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party apps
     'django_cleanup.apps.CleanupConfig',
     'django_htmx',
     'allauth',
     'allauth.account',
+    'channels',
 
-    #my apps
+    # Your apps
     'apps.home',
     'apps.users',
-    'apps.messenger'
+    'apps.messenger',
 ]
+
+# INSTALLED_APPS = [
+#     "daphne",
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'django_cleanup.apps.CleanupConfig',
+#     'django_htmx',
+#     'allauth',
+#     'allauth.account',
+#
+#     #my apps
+#     'apps.home',
+#     'apps.users',
+#     'apps.messenger'
+# ]
 
 SITE_ID = 1
 
@@ -86,7 +109,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+
+# WSGI_APPLICATION = 'core.wsgi.application'
+ASGI_APPLICATION = 'core.asgi.application'
+
 
 
 # Database
