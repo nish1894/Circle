@@ -11,7 +11,7 @@ from .consumers import ChatroomConsumer
 
 websocket_urlpatterns = [
     path(
-      "ws/chatroom/<str:room_name>/",
+      "ws/chatroom/<str:chatroom_name>",
       ChatroomConsumer.as_asgi(),
       name="ws-chatroom"
     ),
