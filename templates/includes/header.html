@@ -9,6 +9,12 @@
     <nav class="block relative">
         <ul class="navitems flex items-center justify-center h-full">
             {% if request.user.is_authenticated %}
+            <li>
+              <a href="/messenger/" class="inline-flex items-center p-2">
+                <i class="fas fa-envelope fa-lg text-black"></i>
+              </a>
+            </li>
+
             <li><a href="/">Home</a></li>
             <li x-data="{ dropdownOpen: false }" class="relative">
                 <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="cursor-pointer select-none">

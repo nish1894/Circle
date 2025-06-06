@@ -16,6 +16,7 @@ class ChatMessage(models.Model):
 
 class ChatGroup(models.Model):
     group_name = models.CharField(max_length=255, unique = True)
+    users_online = models.ManyToManyField(User, related_name='online_users', blank = True)
 
 
     def __str__(self):
